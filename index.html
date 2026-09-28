@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audit Intelligence Platform: Dashboard</title>
+<style>
+  body { margin: 0; font-family: 'Times New Roman', Times, serif; background: #F5F4F0; color: #1A1A18; }
+  h1, h2, h3 { font-family: 'Times New Roman', Times, serif; margin: 0; }
+  .mono { font-family: 'Courier New', Courier, monospace; }
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-thumb { background: #D9D7CF; border-radius: 4px; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+  a, button { cursor: pointer; }
+  button { transition: filter .15s ease, transform .08s ease; }
+  button:hover { filter: brightness(1.08); }
+  button:active { transform: scale(0.98); }
+  a[style*="text-decoration: none"] { transition: background-color .15s ease, color .15s ease, filter .15s ease; }
+  a[style*="color: #C7D6CE"]:hover { background: #1C2B24; color: #FFFFFF; }
+  a[style*="background: #16241F"]:hover { filter: brightness(1.25); }
+  div[style*="border-radius: 12px"][style*="1px solid #E5E4DF"] { transition: box-shadow .15s ease; box-shadow: 0 1px 2px rgba(22,36,31,0.05); }
+  div[style*="border-radius: 12px"][style*="1px solid #E5E4DF"]:hover { box-shadow: 0 6px 18px rgba(22,36,31,0.10); }
+</style>
+</head>
+<body>
+
+<div style="width: 1440px; max-width: 100%; min-height: 1000px; box-sizing: border-box; display: flex; margin: 0 auto;">
+
+  <!-- SIDEBAR -->
+  <div style="width: 240px; flex-shrink: 0; background: #16241F; color: #F5F4F0; display: flex; flex-direction: column; padding: 28px 20px; box-sizing: border-box; gap: 32px;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <div style="width: 34px; height: 34px; border-radius: 9px; background: #4FA187; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B1512" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      </div>
+      <div>
+        <div style="font-family: 'Times New Roman', Times, serif; font-weight: 700; font-size: 15px; line-height: 1.2;">Audit Intelligence</div>
+        <div style="font-size: 11px; color: #8FA79C;">Platform</div>
+      </div>
+    </div>
+
+    <a href="index.html" style="display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 8px; background: #3A1F1F; border: 1px solid #5A2E2E; text-decoration: none;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F2A9A0" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+      <span style="font-size: 12px; font-weight: 600; color: #F5B8B0;">3 pending alerts</span>
+      <span style="margin-left: auto; width: 8px; height: 8px; border-radius: 999px; background: #E5484D;"></span>
+    </a>
+
+    <div style="display: flex; flex-direction: column; gap: 4px;">
+      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #6F8B7F; padding: 0 10px 6px;">Overview</div>
+      <div style="display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; background: #22362F; font-size: 14px; font-weight: 500;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F5F4F0" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+        Dashboard
+      </div>
+      <a href="ticket-detail.html" style="display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; font-size: 14px; color: #C7D6CE; text-decoration: none;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8FA79C" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+        Ticket Detail
+      </a>
+      <a href="consistency-analytics.html" style="display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; font-size: 14px; color: #C7D6CE; text-decoration: none;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8FA79C" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l4-6 4 3 5-8"/></svg>
+        Consistency Analytics
+      </a>
+      <a href="monitor.html" style="display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; font-size: 14px; color: #C7D6CE; text-decoration: none;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8FA79C" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg>
+        Real-Time Monitor
+      </a>
+      <a href="history.html" style="display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; font-size: 14px; color: #C7D6CE; text-decoration: none;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8FA79C" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 2v4"/><path d="M16 2v4"/></svg>
+        Audit History
+      </a>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 4px;">
+      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #6F8B7F; padding: 0 10px 6px;">Configure</div>
+      <a href="scoring-rubric.html" style="display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; font-size: 14px; color: #C7D6CE; text-decoration: none;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8FA79C" stroke-width="2"><path d="M9 3h6l1 3.5 3 1.7 3.5-1L23 10l-2.5 2.5v3L23 18l-1.5 2.8-3.5-1-3 1.7L14 24H9l-1-3.5-3-1.7-3.5 1L0 17l2.5-2.5v-3L0 9l1.5-2.8 3.5 1 3-1.7z" transform="scale(0.75) translate(2,2)"/><circle cx="12" cy="12" r="3"/></svg>
+        Scoring Rubric
+      </a>
+    </div>
+
+    <div style="margin-top: auto; padding: 12px; background: #1E322B; border-radius: 10px; font-size: 12px; color: #A7BEB4; line-height: 1.5;">
+      Ops Governance Audit team, CAF&Eacute; pipeline
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div style="flex-grow: 1; padding: 36px 44px; display: flex; flex-direction: column; gap: 28px; box-sizing: border-box;">
+
+    <!-- HEADER -->
+    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+      <div>
+        <h1 style="font-size: 26px; color: #16241F;">Audit Intelligence Platform</h1>
+        <div style="font-size: 14px; color: #6B6B66; margin-top: 6px; max-width: 560px;">Automated data extraction, real-time monitoring &amp; consistent AI-assisted scoring for INC / SR / CR ticket audits.</div>
+        <div style="font-size: 11px; color: #9A9A94; margin-top: 6px;">Illustrative sample data for this prototype, to be calibrated against real audit logs during the 30-day pilot.</div>
+      </div>
+      <div style="display: flex; gap: 10px;">
+        <button style="padding: 10px 16px; border-radius: 8px; border: 1px solid #D9D7CF; background: #FFFFFF; font-size: 13px; font-weight: 500; color: #3A3A35; cursor: pointer;">Export Report</button>
+        <button style="padding: 10px 16px; border-radius: 8px; border: none; background: #16241F; color: #F5F4F0; font-size: 13px; font-weight: 500; cursor: pointer;">Run New Audit Batch</button>
+      </div>
+    </div>
+
+    <!-- KPI ROW -->
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px;">
+
+      <div style="background: #FFFFFF; border: 1px solid #E5E4DF; border-radius: 12px; padding: 20px;">
+        <div style="font-size: 12px; color: #6B6B66; font-weight: 500;">Tickets Processed Today</div>
+        <div style="display: flex; align-items: flex-end; justify-content: space-between; margin-top: 6px;">
+          <div style="font-size: 30px; font-weight: 700; font-family: 'Times New Roman', Times, serif; color: #16241F;">248</div>
+          <svg width="64" height="24" viewBox="0 0 64 24"><polyline points="2,18 15,15 28,12 41,10 54,7 62,4" fill="none" stroke="#4FA187" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="62" cy="4" r="2.5" fill="#4FA187"/></svg>
+        </div>
+        <div style="font-size: 12px; color: #1E7F4D; margin-top: 4px; font-weight: 500;">&uarr; auto-extracted, no manual entry</div>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E5E4DF; border-radius: 12px; padding: 20px;">
+        <div style="font-size: 12px; color: #6B6B66; font-weight: 500;">Auto-Cleared by AI</div>
+        <div style="display: flex; align-items: flex-end; justify-content: space-between; margin-top: 6px;">
+          <div style="font-size: 30px; font-weight: 700; font-family: 'Times New Roman', Times, serif; color: #16241F;">211</div>
+          <svg width="64" height="24" viewBox="0 0 64 24"><polyline points="2,16 15,15 28,13 41,12 54,10 62,9" fill="none" stroke="#8FA79C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="62" cy="9" r="2.5" fill="#8FA79C"/></svg>
+        </div>
+        <div style="font-size: 12px; color: #6B6B66; margin-top: 4px;">85% of volume, no human review needed</div>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E5E4DF; border-radius: 12px; padding: 20px;">
+        <div style="font-size: 12px; color: #6B6B66; font-weight: 500;">Flagged for Exception Review</div>
+        <div style="display: flex; align-items: flex-end; justify-content: space-between; margin-top: 6px;">
+          <div style="font-size: 30px; font-weight: 700; font-family: 'Times New Roman', Times, serif; color: #B45309;">37</div>
+          <svg width="64" height="24" viewBox="0 0 64 24"><polyline points="2,6 15,8 28,10 41,13 54,16 62,18" fill="none" stroke="#E39A3F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="62" cy="18" r="2.5" fill="#E39A3F"/></svg>
+        </div>
+        <div style="font-size: 12px; color: #6B6B66; margin-top: 4px;">Auditors review only these</div>
+      </div>
+
+      <div style="background: #FFFFFF; border: 1px solid #E5E4DF; border-radius: 12px; padding: 20px;">
+        <div style="font-size: 12px; color: #6B6B66; font-weight: 500;">Scoring Consistency</div>
+        <div style="display: flex; align-items: flex-end; justify-content: space-between; margin-top: 6px;">
+          <div style="font-size: 30px; font-weight: 700; font-family: 'Times New Roman', Times, serif; color: #16241F;">96.4%</div>
+          <svg width="64" height="24" viewBox="0 0 64 24"><polyline points="2,17 15,14 28,12 41,9 54,7 62,5" fill="none" stroke="#4FA187" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="62" cy="5" r="2.5" fill="#4FA187"/></svg>
+        </div>
+        <div style="font-size: 12px; color: #1E7F4D; margin-top: 4px; font-weight: 500;">&uarr; up from 78% (manual baseline)</div>
+      </div>
+
+    </div>
+
+    <!-- WORKFLOW STRIP -->
+    <div style="background: #FFFFFF; border: 1px solid #E5E4DF; border-radius: 12px; padding: 22px 24px;">
+      <div style="font-size: 13px; font-weight: 600; color: #16241F; margin-bottom: 16px;">How a ticket moves through the platform</div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 8px; align-items: center; text-align: center;">
+          <div style="width: 40px; height: 40px; border-radius: 10px; background: #EAF4EF; display: flex; align-items: center; justify-content: center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E7F4D" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M9 9h6v6H9z"/></svg>
+          </div>
+          <div style="font-size: 12.5px; font-weight: 600; color: #16241F;">1. Auto-Extract</div>
+          <div style="font-size: 11px; color: #6B6B66; max-width: 150px;">INC/SR/CR pulled from ticketing system in real time</div>
+        </div>
+
+        <div style="width: 40px; height: 2px; background: #D9D7CF;"></div>
+
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 8px; align-items: center; text-align: center;">
+          <div style="width: 40px; height: 40px; border-radius: 10px; background: #EAF4EF; display: flex; align-items: center; justify-content: center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E7F4D" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          </div>
+          <div style="font-size: 12.5px; font-weight: 600; color: #16241F;">2. Monitor Live</div>
+          <div style="font-size: 11px; color: #6B6B66; max-width: 150px;">Deviations flagged while ticket is still open</div>
+        </div>
+
+        <div style="width: 40px; height: 2px; background: #D9D7CF;"></div>
+
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 8px; align-items: center; text-align: center;">
+          <div style="width: 40px; height: 40px; border-radius: 10px; background: #EAF4EF; display: flex; align-items: center; justify-content: center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E7F4D" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l4-6 4 3 5-8"/></svg>
+          </div>
+          <div style="font-size: 12.5px; font-weight: 600; color: #16241F;">3. AI Score</div>
+          <div style="font-size: 11px; color: #6B6B66; max-width: 150px;">Standardized rubric applied to every ticket, same way</div>
+        </div>
+
+        <div style="width: 40px; height: 2px; background: #D9D7CF;"></div>
+
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 8px; align-items: center; text-align: center;">
+          <div style="width: 40px; height: 40px; border-radius: 10px; background: #FDF3E6; display: flex; align-items: center; justify-content: center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+          </div>
+          <div style="font-size: 12.5px; font-weight: 600; color: #16241F;">4. Human Review</div>
+          <div style="font-size: 11px; color: #6B6B66; max-width: 150px;">Only exceptions reach an auditor's desk</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TICKET QUEUE + FILTER TABS -->
+    <div style="background: #FFFFFF; border: 1px solid #E5E4DF; border-radius: 12px; overflow: hidden;">
+
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 18px 22px 0;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="font-size: 14px; font-weight: 600; color: #16241F;">Ticket Audit Queue</div>
+          <span style="display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px; border-radius: 999px; font-size: 11.5px; font-weight: 700; background: #FBEAE6; color: #B4432F;">&#128308; 3 need attention</span>
+        </div>
+        <a href="history.html" style="font-size: 12.5px; color: #6B6B66; text-decoration: none;">View Full Audit History &rarr;</a>
+      </div>
+
+      <div id="tabRow" style="display: flex; gap: 4px; padding: 14px 22px 0; border-bottom: 1px solid #E5E4DF;">
+        <button id="tab-all" onclick="selectFilter('all')">All (12)</button>
+        <button id="tab-flagged" onclick="selectFilter('flagged')">Flagged (3)</button>
+        <button id="tab-cleared" onclick="selectFilter('cleared')">Cleared, last 7 days (7)</button>
+        <button id="tab-review" onclick="selectFilter('review')">In Review (2)</button>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 90px 60px 1fr 95px 130px 70px 100px 150px 80px; padding: 12px 22px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: #8A8A84; font-weight: 600; border-bottom: 1px solid #F0EFEA;">
+        <div>Ticket ID</div>
+        <div>Type</div>
+        <div>Summary</div>
+        <div>Requested</div>
+        <div>Auditor</div>
+        <div>AI Score</div>
+        <div>Status</div>
+        <div>Alert Sent</div>
+        <div></div>
+      </div>
+
+      <div id="ticketRows"></div>
+
+    </div>
+
+    <!-- NOTIFICATION EXPLAINER -->
+    <div style="background: #FFFFFF; border: 1px solid #E5E4DF; border-radius: 12px; padding: 18px 22px; display: flex; gap: 14px; align-items: flex-start;">
+      <div style="width: 34px; height: 34px; border-radius: 8px; background: #4A154B; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #FFFFFF; font-weight: 700; font-size: 16px;">#</div>
+      <div style="flex-grow: 1;">
+        <div style="font-size: 13px; font-weight: 700; color: #16241F;">Auditors don't have to check the queue; the queue notifies them</div>
+        <div style="font-size: 12.5px; color: #6B6B66; margin-top: 4px; line-height: 1.5;">The moment a ticket is flagged, a message goes straight to the audit team's Slack/Teams channel, for example: <span style="color: #3A3A35;">&#128308; <strong>CR-0345</strong> flagged: Rollback Plan missing (critical). <span style="color: #1264A3;">@ahmad.rahman</span> please review before end of day.</span> Critical failures @-mention someone immediately; borderline scores are batched into a daily digest so the channel isn't spammed.</div>
+        <div style="font-size: 12.5px; color: #6B6B66; margin-top: 8px; line-height: 1.5;"><strong style="color: #16241F;">If unacknowledged after 4 hours</strong>, the alert automatically re-routes to whoever currently has the fewest open flags, so a ticket never sits waiting just because one auditor happens to be away or overloaded.</div>
+      </div>
+    </div>
+
+    <!-- AUDITOR WORKLOAD -->
+    <div style="background: #FFFFFF; border: 1px solid #E5E4DF; border-radius: 12px; padding: 18px 22px;">
+      <div style="font-size: 13px; font-weight: 700; color: #16241F; margin-bottom: 4px;">Auditor Workload: who the next escalation goes to</div>
+      <div style="font-size: 12px; color: #6B6B66; margin-bottom: 14px;">Ranked by open flags right now: the escalation rule always routes to whoever's at the bottom of this list</div>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 190px; font-size: 13px; color: #3A3A35;">Ahmad Rahman bin Yusof</div>
+          <div style="flex-grow: 1; height: 8px; background: #F0EFEA; border-radius: 999px; overflow: hidden;"><div style="width: 66%; height: 100%; background: #E39A3F;"></div></div>
+          <div class="mono" style="width: 90px; text-align: right; font-size: 12.5px; font-weight: 600; color: #B45309;">2 open</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 190px; font-size: 13px; color: #3A3A35;">Lim Wei Ling</div>
+          <div style="flex-grow: 1; height: 8px; background: #F0EFEA; border-radius: 999px; overflow: hidden;"><div style="width: 33%; height: 100%; background: #4FA187;"></div></div>
+          <div class="mono" style="width: 90px; text-align: right; font-size: 12.5px; font-weight: 600; color: #1E7F4D;">1 open</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 190px; font-size: 13px; color: #3A3A35;">Ong Wei Jian</div>
+          <div style="flex-grow: 1; height: 8px; background: #F0EFEA; border-radius: 999px; overflow: hidden;"><div style="width: 0%; height: 100%; background: #4FA187;"></div></div>
+          <div class="mono" style="width: 90px; text-align: right; font-size: 12.5px; font-weight: 700; color: #1E7F4D;">0 open &larr; next</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONSTRAINT NOTE -->
+    <div style="background: #FBEAE6; border: 1px solid #F0C9BE; border-radius: 12px; padding: 16px 20px; display: flex; gap: 12px; align-items: flex-start;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B4432F" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><path d="M12 9v4"/><path d="M12 17h.01"/><circle cx="12" cy="12" r="9"/></svg>
+      <div style="font-size: 13px; color: #7A3226; line-height: 1.5;"><strong>Runs alongside the current process</strong>, no new ticketing system required. The platform reads from the existing tool, applies the standardized rubric, and only routes genuine exceptions to auditors.</div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  var allTickets = [
+    { id: 'INC-2049', type: 'INC', summary: 'Network outage RCA documentation', requested: '19 Sep', auditor: 'Ahmad Rahman bin Yusof', score: '94', status: 'Cleared', age: 0 },
+    { id: 'SR-1187', type: 'SR', summary: 'Access request approval trail', requested: '17 Sep', auditor: 'Lim Wei Ling', score: '88', status: 'Cleared', age: 0 },
+    { id: 'CR-0345', type: 'CR', summary: 'Change window sign-off missing', requested: '21 Sep', auditor: 'Ahmad Rahman bin Yusof', score: '61', status: 'Flagged', age: 2 },
+    { id: 'INC-2051', type: 'INC', summary: 'P1 escalation timestamp check', requested: '18 Sep', auditor: 'Ong Wei Jian', score: '90', status: 'Cleared', age: 0 },
+    { id: 'SR-1190', type: 'SR', summary: 'License request duplicate check', requested: '24 Sep', auditor: 'Lim Wei Ling', score: '77', status: 'In Review', age: 1 },
+    { id: 'CR-0348', type: 'CR', summary: 'Rollback plan not attached', requested: '24 Sep', auditor: 'Ong Wei Jian', score: '58', status: 'Flagged', age: 1 },
+    { id: 'INC-2053', type: 'INC', summary: 'Root cause field completeness', requested: '20 Sep', auditor: 'Ahmad Rahman bin Yusof', score: '92', status: 'Cleared', age: 0 },
+    { id: 'SR-1193', type: 'SR', summary: 'Approver hierarchy validation', requested: '16 Sep', auditor: 'Lim Wei Ling', score: '85', status: 'Cleared', age: 0 },
+    { id: 'CR-0351', type: 'CR', summary: 'Test evidence attachment check', requested: '15 Sep', auditor: 'Ong Wei Jian', score: '95', status: 'Cleared', age: 0 },
+    { id: 'INC-2056', type: 'INC', summary: 'Closure notes vs SLA match', requested: '21 Sep', auditor: 'Ahmad Rahman bin Yusof', score: '69', status: 'In Review', age: 4 },
+    { id: 'SR-1197', type: 'SR', summary: 'Segregation-of-duties flag', requested: '22 Sep', auditor: 'Lim Wei Ling', score: '54', status: 'Flagged', age: 3 },
+    { id: 'CR-0354', type: 'CR', summary: 'Post-implementation review logged', requested: '14 Sep', auditor: 'Ong Wei Jian', score: '91', status: 'Cleared', age: 0 }
+  ];
+
+  var currentFilter = 'all';
+
+  function tabStyle(active) {
+    var base = 'padding: 10px 14px; border: none; background: transparent; font-size: 13px; font-weight: 500; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px;';
+    if (active) return base + ' color: #16241F; border-bottom-color: #16241F; font-weight: 600;';
+    return base + ' color: #8A8A84;';
+  }
+
+  function badgeStyle(status) {
+    if (status === 'Cleared') return 'display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; background: #E8F5EE; color: #1E7F4D;';
+    if (status === 'Flagged') return 'display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; background: #FDF3E6; color: #B45309;';
+    return 'display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; background: #FBEAE6; color: #B4432F;';
+  }
+
+  function alertFor(status, ageDays) {
+    if (status === 'Flagged') {
+      return { text: '🔴 Critical ping · ' + ageDays + 'd ago', style: 'color: #B4432F; font-weight: 600;' };
+    }
+    if (status === 'In Review') {
+      var overdue = ageDays >= 3;
+      return {
+        text: overdue ? ('🟠 Reminder sent · ' + ageDays + 'd, overdue') : ('🟠 Digest · ' + ageDays + 'd ago'),
+        style: overdue ? 'color: #B45309; font-weight: 600;' : 'color: #8A6A3D;'
+      };
+    }
+    return { text: 'No alert needed', style: 'color: #B9B9B2;' };
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  function render() {
+    document.getElementById('tab-all').setAttribute('style', tabStyle(currentFilter === 'all'));
+    document.getElementById('tab-flagged').setAttribute('style', tabStyle(currentFilter === 'flagged'));
+    document.getElementById('tab-cleared').setAttribute('style', tabStyle(currentFilter === 'cleared'));
+    document.getElementById('tab-review').setAttribute('style', tabStyle(currentFilter === 'review'));
+
+    var filtered = allTickets;
+    if (currentFilter === 'flagged') filtered = allTickets.filter(function (t) { return t.status === 'Flagged'; });
+    if (currentFilter === 'cleared') filtered = allTickets.filter(function (t) { return t.status === 'Cleared'; });
+    if (currentFilter === 'review') filtered = allTickets.filter(function (t) { return t.status === 'In Review'; });
+
+    var html = filtered.map(function (t) {
+      var alert = alertFor(t.status, t.age);
+      return '' +
+        '<div style="display: grid; grid-template-columns: 90px 60px 1fr 95px 130px 70px 100px 150px 80px; padding: 14px 22px; font-size: 13px; align-items: center; border-bottom: 1px solid #F5F4F0;">' +
+        '<div class="mono" style="font-weight: 600; color: #16241F;">' + escapeHtml(t.id) + '</div>' +
+        '<div style="color: #6B6B66;">' + escapeHtml(t.type) + '</div>' +
+        '<div style="color: #3A3A35;">' + escapeHtml(t.summary) + '</div>' +
+        '<div class="mono" style="color: #6B6B66; font-size: 11.5px;">' + escapeHtml(t.requested) + '</div>' +
+        '<div style="color: #6B6B66; font-size: 12px;">' + escapeHtml(t.auditor) + '</div>' +
+        '<div class="mono" style="font-weight: 600; color: #16241F;">' + escapeHtml(t.score) + '</div>' +
+        '<div><span style="' + badgeStyle(t.status) + '">' + escapeHtml(t.status) + '</span></div>' +
+        '<div style="font-size: 11.5px; ' + alert.style + '">' + alert.text + '</div>' +
+        '<div><a href="ticket-detail.html" style="display: inline-flex; align-items: center; gap: 4px; padding: 7px 12px; border-radius: 7px; background: #16241F; color: #F5F4F0; font-weight: 600; font-size: 12.5px; text-decoration: none; white-space: nowrap;">View &rarr;</a></div>' +
+        '</div>';
+    }).join('');
+
+    document.getElementById('ticketRows').innerHTML = html;
+  }
+
+  function selectFilter(f) {
+    currentFilter = f;
+    render();
+  }
+
+  render();
+</script>
+</body>
+</html>
