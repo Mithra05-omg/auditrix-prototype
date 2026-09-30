@@ -98,6 +98,12 @@
       </div>
     </div>
 
+    <!-- CONSTRAINT BADGE -->
+    <div style="display: flex; align-items: center; gap: 8px; background: #FBEAE6; border: 1px solid #F0C9BE; border-radius: 8px; padding: 8px 14px;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B4432F" stroke-width="2" style="flex-shrink: 0;"><path d="M12 9v4"/><path d="M12 17h.01"/><circle cx="12" cy="12" r="9"/></svg>
+      <div style="font-size: 12px; color: #7A3226;"><strong>Runs alongside the current process</strong>, no new ticketing system required. The platform reads from the existing tool, applies the standardized rubric, and only routes genuine exceptions to auditors.</div>
+    </div>
+
     <!-- KPI ROW -->
     <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px;">
 
@@ -194,85 +200,6 @@
       <div id="simResult" style="margin-top: 14px;"></div>
     </div>
 
-    <!-- PROJECTED IMPACT (ROI) -->
-    <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 22px 24px;">
-      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px; flex-wrap: wrap;">
-        <div style="font-size: 13px; font-weight: 600; color: #1E293B;">Projected Impact</div>
-        <span style="display: inline-flex; align-items: center; padding: 3px 10px; border-radius: 999px; font-size: 10.5px; font-weight: 700; background: #DBEAFE; color: #2563EB; text-transform: uppercase; letter-spacing: 0.03em;">Illustrative Estimate</span>
-      </div>
-      <div style="font-size: 12.5px; color: #64748B; margin-bottom: 16px;">Simple arithmetic using the baseline and volume numbers already shown in this prototype, not a guaranteed figure</div>
-
-      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-bottom: 16px;">
-        <div style="background: #F1F5F9; border-radius: 8px; padding: 12px 14px;">
-          <div class="mono" style="font-size: 20px; font-weight: 700; color: #1E293B;">45 min</div>
-          <div style="font-size: 11px; color: #64748B; margin-top: 2px;">Manual review time per ticket (legacy baseline)</div>
-        </div>
-        <div style="background: #F1F5F9; border-radius: 8px; padding: 12px 14px;">
-          <div class="mono" style="font-size: 20px; font-weight: 700; color: #1E293B;">10% &rarr; 100%</div>
-          <div style="font-size: 11px; color: #64748B; margin-top: 2px;">Manual sampling coverage vs. automated coverage</div>
-        </div>
-        <div style="background: #F1F5F9; border-radius: 8px; padding: 12px 14px;">
-          <div class="mono" style="font-size: 20px; font-weight: 700; color: #1E293B;">~223 / day</div>
-          <div style="font-size: 11px; color: #64748B; margin-top: 2px;">Tickets previously unreviewed (90% of today's 248)</div>
-        </div>
-        <div style="background: #DBEAFE; border-radius: 8px; padding: 12px 14px;">
-          <div class="mono" style="font-size: 20px; font-weight: 700; color: #1D4ED8;">~167 hrs / day</div>
-          <div style="font-size: 11px; color: #1D4ED8; margin-top: 2px;">Estimated manual hours to check those, at the 45-min baseline</div>
-        </div>
-      </div>
-
-      <div style="background: #F1F5F9; border-radius: 8px; padding: 14px 16px; font-size: 13px; color: #334155; line-height: 1.6;">
-        Under the legacy manual process, auditors could only randomly sample 10% of tickets, at an average of 45 minutes each (see <a href="legacy-operations.html" style="color: #2563EB;">Legacy Process</a>). At today's volume of 248 tickets processed, that means about 223 tickets a day (90% of volume) received no audit at all. Checking those 223 tickets by hand, at the same 45-minute baseline, would take an estimated 167 hours of manual work per day, more hours than any realistic auditor headcount could cover. This platform scores all 248 tickets automatically instead, so that full coverage happens with zero added manual review time, and auditors only spend time on the 37 tickets flagged as genuine exceptions today.
-      </div>
-      <div style="font-size: 11px; color: #94A3B8; margin-top: 8px;">Illustrative estimate based on the legacy baseline (45 min/ticket, 10% sampling) and today's ticket volume shown above; actual per-ticket time and volume to be confirmed during the 30-day pilot.</div>
-    </div>
-
-    <!-- WORKFLOW STRIP -->
-    <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 22px 24px;">
-      <div style="font-size: 13px; font-weight: 600; color: #1E293B; margin-bottom: 16px;">How a ticket moves through the platform</div>
-      <div style="display: flex; align-items: center; gap: 10px;">
-
-        <div style="flex: 1; display: flex; flex-direction: column; gap: 8px; align-items: center; text-align: center;">
-          <div style="width: 40px; height: 40px; border-radius: 10px; background: #EAF4EF; display: flex; align-items: center; justify-content: center;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E7F4D" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M9 9h6v6H9z"/></svg>
-          </div>
-          <div style="font-size: 12.5px; font-weight: 600; color: #1E293B;">1. Auto-Extract</div>
-          <div style="font-size: 11px; color: #64748B; max-width: 150px;">INC/SR/CR pulled from ticketing system in real time</div>
-        </div>
-
-        <div style="width: 40px; height: 2px; background: #CBD5E1;"></div>
-
-        <div style="flex: 1; display: flex; flex-direction: column; gap: 8px; align-items: center; text-align: center;">
-          <div style="width: 40px; height: 40px; border-radius: 10px; background: #EAF4EF; display: flex; align-items: center; justify-content: center;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E7F4D" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-          </div>
-          <div style="font-size: 12.5px; font-weight: 600; color: #1E293B;">2. Monitor Live</div>
-          <div style="font-size: 11px; color: #64748B; max-width: 150px;">Deviations flagged while ticket is still open</div>
-        </div>
-
-        <div style="width: 40px; height: 2px; background: #CBD5E1;"></div>
-
-        <div style="flex: 1; display: flex; flex-direction: column; gap: 8px; align-items: center; text-align: center;">
-          <div style="width: 40px; height: 40px; border-radius: 10px; background: #EAF4EF; display: flex; align-items: center; justify-content: center;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1E7F4D" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l4-6 4 3 5-8"/></svg>
-          </div>
-          <div style="font-size: 12.5px; font-weight: 600; color: #1E293B;">3. AI Score</div>
-          <div style="font-size: 11px; color: #64748B; max-width: 150px;">Standardized rubric applied to every ticket, same way</div>
-        </div>
-
-        <div style="width: 40px; height: 2px; background: #CBD5E1;"></div>
-
-        <div style="flex: 1; display: flex; flex-direction: column; gap: 8px; align-items: center; text-align: center;">
-          <div style="width: 40px; height: 40px; border-radius: 10px; background: #FDF3E6; display: flex; align-items: center; justify-content: center;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
-          </div>
-          <div style="font-size: 12.5px; font-weight: 600; color: #1E293B;">4. Human Review</div>
-          <div style="font-size: 11px; color: #64748B; max-width: 150px;">Only exceptions reach an auditor's desk</div>
-        </div>
-
-      </div>
-    </div>
-
     <!-- TICKET QUEUE + FILTER TABS -->
     <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; overflow: hidden;">
 
@@ -309,45 +236,6 @@
 
       <div id="ticketRows"></div>
 
-    </div>
-
-    <!-- NOTIFICATION EXPLAINER -->
-    <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 18px 22px; display: flex; gap: 14px; align-items: flex-start;">
-      <div style="width: 34px; height: 34px; border-radius: 8px; background: #4A154B; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #FFFFFF; font-weight: 700; font-size: 16px;">#</div>
-      <div style="flex-grow: 1;">
-        <div style="font-size: 13px; font-weight: 700; color: #1E293B;">Auditors don't have to check the queue; the queue notifies them</div>
-        <div style="font-size: 12.5px; color: #64748B; margin-top: 4px; line-height: 1.5;">The moment a ticket is flagged, a message goes straight to the audit team's Slack/Teams channel, for example: <span style="color: #334155;">&#128308; <strong>CR-0345</strong> flagged: Rollback Plan missing (critical). <span style="color: #1264A3;">@ahmad.rahman</span> please review before end of day.</span> Critical failures @-mention someone immediately; borderline scores are batched into a daily digest so the channel isn't spammed.</div>
-        <div style="font-size: 12.5px; color: #64748B; margin-top: 8px; line-height: 1.5;"><strong style="color: #1E293B;">If unacknowledged after 4 hours</strong>, the alert automatically re-routes to whoever currently has the fewest open flags, so a ticket never sits waiting just because one auditor happens to be away or overloaded.</div>
-      </div>
-    </div>
-
-    <!-- AUDITOR WORKLOAD -->
-    <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 18px 22px;">
-      <div style="font-size: 13px; font-weight: 700; color: #1E293B; margin-bottom: 4px;">Auditor Workload: who the next escalation goes to</div>
-      <div style="font-size: 12px; color: #64748B; margin-bottom: 14px;">Ranked by open flags right now: the escalation rule always routes to whoever's at the bottom of this list</div>
-      <div style="display: flex; flex-direction: column; gap: 10px;">
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <div style="width: 190px; font-size: 13px; color: #334155;">Ahmad Rahman bin Yusof</div>
-          <div style="flex-grow: 1; height: 8px; background: #E2E8F0; border-radius: 999px; overflow: hidden;"><div style="width: 66%; height: 100%; background: #E39A3F;"></div></div>
-          <div class="mono" style="width: 90px; text-align: right; font-size: 12.5px; font-weight: 600; color: #B45309;">2 open</div>
-        </div>
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <div style="width: 190px; font-size: 13px; color: #334155;">Lim Wei Ling</div>
-          <div style="flex-grow: 1; height: 8px; background: #E2E8F0; border-radius: 999px; overflow: hidden;"><div style="width: 33%; height: 100%; background: #4FA187;"></div></div>
-          <div class="mono" style="width: 90px; text-align: right; font-size: 12.5px; font-weight: 600; color: #1E7F4D;">1 open</div>
-        </div>
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <div style="width: 190px; font-size: 13px; color: #334155;">Ong Wei Jian</div>
-          <div style="flex-grow: 1; height: 8px; background: #E2E8F0; border-radius: 999px; overflow: hidden;"><div style="width: 0%; height: 100%; background: #4FA187;"></div></div>
-          <div class="mono" style="width: 90px; text-align: right; font-size: 12.5px; font-weight: 700; color: #1E7F4D;">0 open &larr; next</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- CONSTRAINT NOTE -->
-    <div style="background: #FBEAE6; border: 1px solid #F0C9BE; border-radius: 12px; padding: 16px 20px; display: flex; gap: 12px; align-items: flex-start;">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B4432F" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><path d="M12 9v4"/><path d="M12 17h.01"/><circle cx="12" cy="12" r="9"/></svg>
-      <div style="font-size: 13px; color: #7A3226; line-height: 1.5;"><strong>Runs alongside the current process</strong>, no new ticketing system required. The platform reads from the existing tool, applies the standardized rubric, and only routes genuine exceptions to auditors.</div>
     </div>
 
     <!-- FOOTER -->

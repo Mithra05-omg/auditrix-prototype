@@ -230,6 +230,39 @@
       </div>
     </div>
 
+    <!-- PROJECTED IMPACT (ROI) -->
+    <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 22px 24px;">
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px; flex-wrap: wrap;">
+        <div style="font-size: 13px; font-weight: 600; color: #1E293B;">Projected Impact</div>
+        <span style="display: inline-flex; align-items: center; padding: 3px 10px; border-radius: 999px; font-size: 10.5px; font-weight: 700; background: #DBEAFE; color: #2563EB; text-transform: uppercase; letter-spacing: 0.03em;">Illustrative Estimate</span>
+      </div>
+      <div style="font-size: 12.5px; color: #64748B; margin-bottom: 16px;">Simple arithmetic using the baseline and volume numbers already shown in this prototype, not a guaranteed figure</div>
+
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-bottom: 16px;">
+        <div style="background: #F1F5F9; border-radius: 8px; padding: 12px 14px;">
+          <div class="mono" style="font-size: 20px; font-weight: 700; color: #1E293B;">45 min</div>
+          <div style="font-size: 11px; color: #64748B; margin-top: 2px;">Manual review time per ticket (legacy baseline)</div>
+        </div>
+        <div style="background: #F1F5F9; border-radius: 8px; padding: 12px 14px;">
+          <div class="mono" style="font-size: 20px; font-weight: 700; color: #1E293B;">10% &rarr; 100%</div>
+          <div style="font-size: 11px; color: #64748B; margin-top: 2px;">Manual sampling coverage vs. automated coverage</div>
+        </div>
+        <div style="background: #F1F5F9; border-radius: 8px; padding: 12px 14px;">
+          <div class="mono" style="font-size: 20px; font-weight: 700; color: #1E293B;">~223 / day</div>
+          <div style="font-size: 11px; color: #64748B; margin-top: 2px;">Tickets previously unreviewed (90% of today's 248)</div>
+        </div>
+        <div style="background: #DBEAFE; border-radius: 8px; padding: 12px 14px;">
+          <div class="mono" style="font-size: 20px; font-weight: 700; color: #1D4ED8;">~167 hrs / day</div>
+          <div style="font-size: 11px; color: #1D4ED8; margin-top: 2px;">Estimated manual hours to check those, at the 45-min baseline</div>
+        </div>
+      </div>
+
+      <div style="background: #F1F5F9; border-radius: 8px; padding: 14px 16px; font-size: 13px; color: #334155; line-height: 1.6;">
+        Under the legacy manual process, auditors could only randomly sample 10% of tickets, at an average of 45 minutes each (see <a href="legacy-operations.html" style="color: #2563EB;">Legacy Process</a>). At today's volume of 248 tickets processed, that means about 223 tickets a day (90% of volume) received no audit at all. Checking those 223 tickets by hand, at the same 45-minute baseline, would take an estimated 167 hours of manual work per day, more hours than any realistic auditor headcount could cover. This platform scores all 248 tickets automatically instead, so that full coverage happens with zero added manual review time, and auditors only spend time on the 37 tickets flagged as genuine exceptions today.
+      </div>
+      <div style="font-size: 11px; color: #94A3B8; margin-top: 8px;">Illustrative estimate based on the legacy baseline (45 min/ticket, 10% sampling) and today's ticket volume shown above; actual per-ticket time and volume to be confirmed during the 30-day pilot.</div>
+    </div>
+
     <!-- RISK TREND CHART (PILOT SIMULATION) -->
     <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 22px 24px;">
       <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 2px; flex-wrap: wrap;">
