@@ -5,20 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Audit Intelligence Platform: Scoring Rubric</title>
 <style>
-  body { margin: 0; font-family: 'Times New Roman', Times, serif; background: #080F27; color: #E7E9F5; }
+  body { margin: 0; font-family: 'Times New Roman', Times, serif; background: #F8FAFC; color: #1E293B; }
   h1, h2, h3 { font-family: 'Times New Roman', Times, serif; margin: 0; }
   .mono { font-family: 'Courier New', Courier, monospace; }
   ::-webkit-scrollbar { width: 8px; height: 8px; }
-  ::-webkit-scrollbar-thumb { background: #2B3768; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
   a, button { cursor: pointer; }
   button { transition: filter .15s ease, transform .08s ease; }
   button:hover { filter: brightness(1.08); }
   button:active { transform: scale(0.98); }
   a[style*="text-decoration: none"] { transition: background-color .15s ease, color .15s ease, filter .15s ease; }
-  a[style*="color: #AEB6DD"]:hover { background: #16204A; color: #FFFFFF; }
-  a[style*="background: #FFC303"]:hover { filter: brightness(1.1); }
-  div[style*="border-radius: 12px"][style*="1px solid #232D55"] { transition: box-shadow .15s ease; box-shadow: 0 1px 2px rgba(0,0,0,0.35); }
-  div[style*="border-radius: 12px"][style*="1px solid #232D55"]:hover { box-shadow: 0 6px 18px rgba(255,195,3,0.12); }
+  a[style*="color: #475569"]:hover { background: #EFF6FF; color: #2563EB; }
+  a[style*="background: #2563EB"]:hover { filter: brightness(1.1); }
+  div[style*="border-radius: 12px"][style*="1px solid #E2E8F0"] { transition: box-shadow .15s ease; box-shadow: 0 1px 2px rgba(15,23,42,0.06); }
+  div[style*="border-radius: 12px"][style*="1px solid #E2E8F0"]:hover { box-shadow: 0 6px 18px rgba(37,99,235,0.15); }
 </style>
 </head>
 <body>
@@ -26,56 +26,56 @@
 <div style="width: 1440px; max-width: 100%; min-height: 1020px; box-sizing: border-box; display: flex; margin: 0 auto;">
 
   <!-- SIDEBAR -->
-  <div style="width: 240px; flex-shrink: 0; background: #0A1330; color: #E9ECFB; display: flex; flex-direction: column; padding: 28px 20px; box-sizing: border-box; gap: 32px;">
+  <div style="width: 240px; flex-shrink: 0; background: #FFFFFF; color: #1E293B; display: flex; flex-direction: column; padding: 28px 20px; box-sizing: border-box; gap: 32px; border-right: 1px solid #E2E8F0;">
     <div style="display: flex; align-items: center; gap: 10px;">
-      <div style="width: 34px; height: 34px; border-radius: 9px; background: #FFC303; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B1512" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      <div style="width: 34px; height: 34px; border-radius: 9px; background: #2563EB; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
       </div>
       <div>
         <div style="font-family: 'Times New Roman', Times, serif; font-weight: 700; font-size: 15px; line-height: 1.2;">Audit Intelligence</div>
-        <div style="font-size: 11px; color: #7680A8;">Platform</div>
+        <div style="font-size: 11px; color: #64748B;">Platform</div>
       </div>
     </div>
 
-    <a href="index.html" style="display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 8px; background: #3A1F1F; border: 1px solid #5A2E2E; text-decoration: none;">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F2A9A0" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-      <span style="font-size: 12px; font-weight: 600; color: #F5B8B0;">3 pending alerts</span>
+    <a href="index.html" style="display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 8px; background: #FBEAE6; border: 1px solid #F0C9BE; text-decoration: none;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B4432F" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+      <span style="font-size: 12px; font-weight: 600; color: #B4432F;">3 pending alerts</span>
       <span style="margin-left: auto; width: 8px; height: 8px; border-radius: 999px; background: #E5484D;"></span>
     </a>
 
     <div style="display: flex; flex-direction: column; gap: 4px;">
-      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #6B76A8; padding: 0 10px 6px;">Overview</div>
-      <a href="index.html" style="display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; font-size: 14px; color: #AEB6DD; text-decoration: none;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7680A8" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #94A3B8; padding: 0 10px 6px;">Overview</div>
+      <a href="index.html" style="display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; font-size: 14px; color: #475569; text-decoration: none;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
         Dashboard
       </a>
-      <a href="ticket-detail.html" style="display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; font-size: 14px; color: #AEB6DD; text-decoration: none;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7680A8" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+      <a href="ticket-detail.html" style="display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; font-size: 14px; color: #475569; text-decoration: none;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
         Ticket Detail
       </a>
-      <a href="consistency-analytics.html" style="display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; font-size: 14px; color: #AEB6DD; text-decoration: none;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7680A8" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l4-6 4 3 5-8"/></svg>
+      <a href="consistency-analytics.html" style="display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; font-size: 14px; color: #475569; text-decoration: none;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l4-6 4 3 5-8"/></svg>
         Consistency Analytics
       </a>
-      <a href="monitor.html" style="display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; font-size: 14px; color: #AEB6DD; text-decoration: none;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7680A8" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg>
+      <a href="monitor.html" style="display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; font-size: 14px; color: #475569; text-decoration: none;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg>
         Real-Time Monitor
       </a>
-      <a href="history.html" style="display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; font-size: 14px; color: #AEB6DD; text-decoration: none;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7680A8" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 2v4"/><path d="M16 2v4"/></svg>
+      <a href="history.html" style="display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; font-size: 14px; color: #475569; text-decoration: none;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 2v4"/><path d="M16 2v4"/></svg>
         Audit History
       </a>
     </div>
 
     <div style="display: flex; flex-direction: column; gap: 4px;">
-      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #6B76A8; padding: 0 10px 6px;">Configure</div>
-      <div style="display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; background: #2E2408; font-size: 14px; font-weight: 500;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFC303" stroke-width="2"><path d="M9 3h6l1 3.5 3 1.7 3.5-1L23 10l-2.5 2.5v3L23 18l-1.5 2.8-3.5-1-3 1.7L14 24H9l-1-3.5-3-1.7-3.5 1L0 17l2.5-2.5v-3L0 9l1.5-2.8 3.5 1 3-1.7z" transform="scale(0.75) translate(2,2)"/><circle cx="12" cy="12" r="3"/></svg>
+      <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #94A3B8; padding: 0 10px 6px;">Configure</div>
+      <div style="display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; background: #DBEAFE; font-size: 14px; font-weight: 500;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2"><path d="M9 3h6l1 3.5 3 1.7 3.5-1L23 10l-2.5 2.5v3L23 18l-1.5 2.8-3.5-1-3 1.7L14 24H9l-1-3.5-3-1.7-3.5 1L0 17l2.5-2.5v-3L0 9l1.5-2.8 3.5 1 3-1.7z" transform="scale(0.75) translate(2,2)"/><circle cx="12" cy="12" r="3"/></svg>
         Scoring Rubric
       </div>
     </div>
 
-    <div style="margin-top: auto; padding: 12px; background: #10193F; border-radius: 10px; font-size: 12px; color: #A9B2D6; line-height: 1.5;">
+    <div style="margin-top: auto; padding: 12px; background: #F1F5F9; border-radius: 10px; font-size: 12px; color: #475569; line-height: 1.5;">
       Use the tabs above to switch between the CR, INC, SR, and PRB rubrics: different criteria, same 80-point auto-flag threshold.
     </div>
   </div>
@@ -85,13 +85,13 @@
 
     <!-- HEADER -->
     <div>
-      <a href="index.html" style="font-size: 12.5px; color: #FFC303; text-decoration: none;">&larr; Back to Dashboard</a>
+      <a href="index.html" style="font-size: 12.5px; color: #2563EB; text-decoration: none;">&larr; Back to Dashboard</a>
       <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 10px;">
         <div>
-          <h1 style="font-size: 22px; color: #F4F6FF;">Scoring Rubric</h1>
-          <div style="font-size: 13.5px; color: #9CA5C9; margin-top: 4px;">The standardized weighting every ticket is scored against, before a human ever opens it</div>
+          <h1 style="font-size: 22px; color: #1E293B;">Scoring Rubric</h1>
+          <div style="font-size: 13.5px; color: #64748B; margin-top: 4px;">The standardized weighting every ticket is scored against, before a human ever opens it</div>
         </div>
-        <button style="padding: 10px 16px; border-radius: 8px; border: none; background: #FFC303; color: #0B1330; font-size: 13px; font-weight: 500; cursor: pointer;">Save Rubric Version</button>
+        <button style="padding: 10px 16px; border-radius: 8px; border: none; background: #2563EB; color: #FFFFFF; font-size: 13px; font-weight: 500; cursor: pointer;">Save Rubric Version</button>
       </div>
     </div>
 
@@ -104,236 +104,236 @@
     </div>
 
     <!-- CRITERIA TABLE: CR -->
-    <div id="rubric-CR" style="background: #0F1838; border: 1px solid #232D55; border-radius: 12px; overflow: hidden;">
-      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 14px 22px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: #7E88B0; font-weight: 600; border-bottom: 1px solid #1E2A56; background: #10193F;">
+    <div id="rubric-CR" style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; overflow: hidden;">
+      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 14px 22px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: #64748B; font-weight: 600; border-bottom: 1px solid #E2E8F0; background: #F1F5F9;">
         <div>Criterion</div>
         <div>Weight</div>
         <div>What it checks</div>
         <div>Type</div>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center; border-bottom: 1px solid #1E2A56;">
-        <div style="font-size: 13.5px; font-weight: 600; color: #F4F6FF;">Documentation Completeness</div>
+      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center; border-bottom: 1px solid #E2E8F0;">
+        <div style="font-size: 13.5px; font-weight: 600; color: #1E293B;">Documentation Completeness</div>
         <div>
-          <div style="height: 8px; width: 100%; background: #1E2A56; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 30%; height: 100%; background: #4FA187;"></div></div>
-          <div class="mono" style="font-size: 11.5px; color: #9CA5C9;">30%</div>
+          <div style="height: 8px; width: 100%; background: #E2E8F0; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 30%; height: 100%; background: #4FA187;"></div></div>
+          <div class="mono" style="font-size: 11.5px; color: #64748B;">30%</div>
         </div>
-        <div style="font-size: 12.5px; color: #9CA5C9;">Requester, description, business justification all present</div>
-        <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #1E2A56; color: #9CA5C9;">Standard</span></div>
+        <div style="font-size: 12.5px; color: #64748B;">Requester, description, business justification all present</div>
+        <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #E2E8F0; color: #64748B;">Standard</span></div>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center; border-bottom: 1px solid #1E2A56;">
-        <div style="font-size: 13.5px; font-weight: 600; color: #F4F6FF;">Approval Trail</div>
+      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center; border-bottom: 1px solid #E2E8F0;">
+        <div style="font-size: 13.5px; font-weight: 600; color: #1E293B;">Approval Trail</div>
         <div>
-          <div style="height: 8px; width: 100%; background: #1E2A56; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 25%; height: 100%; background: #4FA187;"></div></div>
-          <div class="mono" style="font-size: 11.5px; color: #9CA5C9;">25%</div>
+          <div style="height: 8px; width: 100%; background: #E2E8F0; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 25%; height: 100%; background: #4FA187;"></div></div>
+          <div class="mono" style="font-size: 11.5px; color: #64748B;">25%</div>
         </div>
-        <div style="font-size: 12.5px; color: #9CA5C9;">Correct approver hierarchy signed off before the change window<br><span style="font-size: 11px; color: #7E88B0; font-style: italic;">System blocks the same login ID from acting as both Requester and Approver on one ticket</span></div>
-        <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #1E2A56; color: #9CA5C9;">Standard</span></div>
+        <div style="font-size: 12.5px; color: #64748B;">Correct approver hierarchy signed off before the change window<br><span style="font-size: 11px; color: #64748B; font-style: italic;">System blocks the same login ID from acting as both Requester and Approver on one ticket</span></div>
+        <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #E2E8F0; color: #64748B;">Standard</span></div>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center; border-bottom: 1px solid #1E2A56;">
-        <div style="font-size: 13.5px; font-weight: 600; color: #F4F6FF;">Rollback Plan Present</div>
+      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center; border-bottom: 1px solid #E2E8F0;">
+        <div style="font-size: 13.5px; font-weight: 600; color: #1E293B;">Rollback Plan Present</div>
         <div>
-          <div style="height: 8px; width: 100%; background: #1E2A56; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 25%; height: 100%; background: #C25A44;"></div></div>
-          <div class="mono" style="font-size: 11.5px; color: #9CA5C9;">25%</div>
+          <div style="height: 8px; width: 100%; background: #E2E8F0; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 25%; height: 100%; background: #C25A44;"></div></div>
+          <div class="mono" style="font-size: 11.5px; color: #64748B;">25%</div>
         </div>
-        <div style="font-size: 12.5px; color: #9CA5C9;">A tested rollback procedure is attached to the ticket</div>
+        <div style="font-size: 12.5px; color: #64748B;">A tested rollback procedure is attached to the ticket</div>
         <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #FBEAE6; color: #B4432F;">Critical</span></div>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center; border-bottom: 1px solid #1E2A56;">
-        <div style="font-size: 13.5px; font-weight: 600; color: #F4F6FF;">Post-Implementation Review</div>
+      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center; border-bottom: 1px solid #E2E8F0;">
+        <div style="font-size: 13.5px; font-weight: 600; color: #1E293B;">Post-Implementation Review</div>
         <div>
-          <div style="height: 8px; width: 100%; background: #1E2A56; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 20%; height: 100%; background: #C25A44;"></div></div>
-          <div class="mono" style="font-size: 11.5px; color: #9CA5C9;">20%</div>
+          <div style="height: 8px; width: 100%; background: #E2E8F0; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 20%; height: 100%; background: #C25A44;"></div></div>
+          <div class="mono" style="font-size: 11.5px; color: #64748B;">20%</div>
         </div>
-        <div style="font-size: 12.5px; color: #9CA5C9;">Outcome of the change confirmed and logged after closure</div>
+        <div style="font-size: 12.5px; color: #64748B;">Outcome of the change confirmed and logged after closure</div>
         <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #FBEAE6; color: #B4432F;">Critical</span></div>
       </div>
 
       <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center;">
-        <div style="font-size: 13.5px; font-weight: 600; color: #F4F6FF;">Cost Impact Reviewed</div>
+        <div style="font-size: 13.5px; font-weight: 600; color: #1E293B;">Cost Impact Reviewed</div>
         <div>
-          <div style="height: 8px; width: 100%; background: #1E2A56; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 10%; height: 100%; background: #4FA187;"></div></div>
-          <div class="mono" style="font-size: 11.5px; color: #9CA5C9;">10%</div>
+          <div style="height: 8px; width: 100%; background: #E2E8F0; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 10%; height: 100%; background: #4FA187;"></div></div>
+          <div class="mono" style="font-size: 11.5px; color: #64748B;">10%</div>
         </div>
-        <div style="font-size: 12.5px; color: #9CA5C9;">Required if change touches cloud infrastructure</div>
-        <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #1E2A56; color: #9CA5C9;">Standard</span></div>
+        <div style="font-size: 12.5px; color: #64748B;">Required if change touches cloud infrastructure</div>
+        <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #E2E8F0; color: #64748B;">Standard</span></div>
       </div>
     </div>
 
     <!-- CRITERIA TABLE: INC -->
-    <div id="rubric-INC" style="display: none; background: #0F1838; border: 1px solid #232D55; border-radius: 12px; overflow: hidden;">
-      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 14px 22px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: #7E88B0; font-weight: 600; border-bottom: 1px solid #1E2A56; background: #10193F;">
+    <div id="rubric-INC" style="display: none; background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; overflow: hidden;">
+      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 14px 22px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: #64748B; font-weight: 600; border-bottom: 1px solid #E2E8F0; background: #F1F5F9;">
         <div>Criterion</div>
         <div>Weight</div>
         <div>What it checks</div>
         <div>Type</div>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center; border-bottom: 1px solid #1E2A56;">
-        <div style="font-size: 13.5px; font-weight: 600; color: #F4F6FF;">Time to Acknowledge</div>
+      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center; border-bottom: 1px solid #E2E8F0;">
+        <div style="font-size: 13.5px; font-weight: 600; color: #1E293B;">Time to Acknowledge</div>
         <div>
-          <div style="height: 8px; width: 100%; background: #1E2A56; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 15%; height: 100%; background: #4FA187;"></div></div>
-          <div class="mono" style="font-size: 11.5px; color: #9CA5C9;">15%</div>
+          <div style="height: 8px; width: 100%; background: #E2E8F0; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 15%; height: 100%; background: #4FA187;"></div></div>
+          <div class="mono" style="font-size: 11.5px; color: #64748B;">15%</div>
         </div>
-        <div style="font-size: 12.5px; color: #9CA5C9;">Incident was acknowledged within the SLA window for its priority level</div>
-        <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #1E2A56; color: #9CA5C9;">Standard</span></div>
+        <div style="font-size: 12.5px; color: #64748B;">Incident was acknowledged within the SLA window for its priority level</div>
+        <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #E2E8F0; color: #64748B;">Standard</span></div>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center; border-bottom: 1px solid #1E2A56;">
-        <div style="font-size: 13.5px; font-weight: 600; color: #F4F6FF;">Root Cause Documented</div>
+      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center; border-bottom: 1px solid #E2E8F0;">
+        <div style="font-size: 13.5px; font-weight: 600; color: #1E293B;">Root Cause Documented</div>
         <div>
-          <div style="height: 8px; width: 100%; background: #1E2A56; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 30%; height: 100%; background: #C25A44;"></div></div>
-          <div class="mono" style="font-size: 11.5px; color: #9CA5C9;">30%</div>
+          <div style="height: 8px; width: 100%; background: #E2E8F0; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 30%; height: 100%; background: #C25A44;"></div></div>
+          <div class="mono" style="font-size: 11.5px; color: #64748B;">30%</div>
         </div>
-        <div style="font-size: 12.5px; color: #9CA5C9;">A specific root cause is recorded, not just "resolved," so repeat incidents can be traced</div>
+        <div style="font-size: 12.5px; color: #64748B;">A specific root cause is recorded, not just "resolved," so repeat incidents can be traced</div>
         <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #FBEAE6; color: #B4432F;">Critical</span></div>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center; border-bottom: 1px solid #1E2A56;">
-        <div style="font-size: 13.5px; font-weight: 600; color: #F4F6FF;">Resolution Confirmed with Requester</div>
+      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center; border-bottom: 1px solid #E2E8F0;">
+        <div style="font-size: 13.5px; font-weight: 600; color: #1E293B;">Resolution Confirmed with Requester</div>
         <div>
-          <div style="height: 8px; width: 100%; background: #1E2A56; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 30%; height: 100%; background: #4FA187;"></div></div>
-          <div class="mono" style="font-size: 11.5px; color: #9CA5C9;">30%</div>
+          <div style="height: 8px; width: 100%; background: #E2E8F0; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 30%; height: 100%; background: #4FA187;"></div></div>
+          <div class="mono" style="font-size: 11.5px; color: #64748B;">30%</div>
         </div>
-        <div style="font-size: 12.5px; color: #9CA5C9;">The person who raised the incident confirmed the fix worked, not just the resolver</div>
-        <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #1E2A56; color: #9CA5C9;">Standard</span></div>
+        <div style="font-size: 12.5px; color: #64748B;">The person who raised the incident confirmed the fix worked, not just the resolver</div>
+        <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #E2E8F0; color: #64748B;">Standard</span></div>
       </div>
 
       <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center;">
-        <div style="font-size: 13.5px; font-weight: 600; color: #F4F6FF;">Category &amp; Priority Correctly Tagged</div>
+        <div style="font-size: 13.5px; font-weight: 600; color: #1E293B;">Category &amp; Priority Correctly Tagged</div>
         <div>
-          <div style="height: 8px; width: 100%; background: #1E2A56; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 25%; height: 100%; background: #4FA187;"></div></div>
-          <div class="mono" style="font-size: 11.5px; color: #9CA5C9;">25%</div>
+          <div style="height: 8px; width: 100%; background: #E2E8F0; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 25%; height: 100%; background: #4FA187;"></div></div>
+          <div class="mono" style="font-size: 11.5px; color: #64748B;">25%</div>
         </div>
-        <div style="font-size: 12.5px; color: #9CA5C9;">Incident is tagged with the right system and severity, so trend reports stay accurate</div>
-        <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #1E2A56; color: #9CA5C9;">Standard</span></div>
+        <div style="font-size: 12.5px; color: #64748B;">Incident is tagged with the right system and severity, so trend reports stay accurate</div>
+        <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #E2E8F0; color: #64748B;">Standard</span></div>
       </div>
     </div>
 
     <!-- CRITERIA TABLE: SR -->
-    <div id="rubric-SR" style="display: none; background: #0F1838; border: 1px solid #232D55; border-radius: 12px; overflow: hidden;">
-      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 14px 22px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: #7E88B0; font-weight: 600; border-bottom: 1px solid #1E2A56; background: #10193F;">
+    <div id="rubric-SR" style="display: none; background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; overflow: hidden;">
+      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 14px 22px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: #64748B; font-weight: 600; border-bottom: 1px solid #E2E8F0; background: #F1F5F9;">
         <div>Criterion</div>
         <div>Weight</div>
         <div>What it checks</div>
         <div>Type</div>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center; border-bottom: 1px solid #1E2A56;">
-        <div style="font-size: 13.5px; font-weight: 600; color: #F4F6FF;">Request Approved Before Fulfillment</div>
+      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center; border-bottom: 1px solid #E2E8F0;">
+        <div style="font-size: 13.5px; font-weight: 600; color: #1E293B;">Request Approved Before Fulfillment</div>
         <div>
-          <div style="height: 8px; width: 100%; background: #1E2A56; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 30%; height: 100%; background: #C25A44;"></div></div>
-          <div class="mono" style="font-size: 11.5px; color: #9CA5C9;">30%</div>
+          <div style="height: 8px; width: 100%; background: #E2E8F0; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 30%; height: 100%; background: #C25A44;"></div></div>
+          <div class="mono" style="font-size: 11.5px; color: #64748B;">30%</div>
         </div>
-        <div style="font-size: 12.5px; color: #9CA5C9;">Sign-off exists before the request was fulfilled, not backfilled afterward</div>
+        <div style="font-size: 12.5px; color: #64748B;">Sign-off exists before the request was fulfilled, not backfilled afterward</div>
         <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #FBEAE6; color: #B4432F;">Critical</span></div>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center; border-bottom: 1px solid #1E2A56;">
-        <div style="font-size: 13.5px; font-weight: 600; color: #F4F6FF;">Fulfillment Matches Request Scope</div>
+      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center; border-bottom: 1px solid #E2E8F0;">
+        <div style="font-size: 13.5px; font-weight: 600; color: #1E293B;">Fulfillment Matches Request Scope</div>
         <div>
-          <div style="height: 8px; width: 100%; background: #1E2A56; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 30%; height: 100%; background: #4FA187;"></div></div>
-          <div class="mono" style="font-size: 11.5px; color: #9CA5C9;">30%</div>
+          <div style="height: 8px; width: 100%; background: #E2E8F0; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 30%; height: 100%; background: #4FA187;"></div></div>
+          <div class="mono" style="font-size: 11.5px; color: #64748B;">30%</div>
         </div>
-        <div style="font-size: 12.5px; color: #9CA5C9;">What was granted or delivered matches exactly what was asked for, no scope creep</div>
-        <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #1E2A56; color: #9CA5C9;">Standard</span></div>
+        <div style="font-size: 12.5px; color: #64748B;">What was granted or delivered matches exactly what was asked for, no scope creep</div>
+        <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #E2E8F0; color: #64748B;">Standard</span></div>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center; border-bottom: 1px solid #1E2A56;">
-        <div style="font-size: 13.5px; font-weight: 600; color: #F4F6FF;">Requester Confirmation of Completion</div>
+      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center; border-bottom: 1px solid #E2E8F0;">
+        <div style="font-size: 13.5px; font-weight: 600; color: #1E293B;">Requester Confirmation of Completion</div>
         <div>
-          <div style="height: 8px; width: 100%; background: #1E2A56; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 25%; height: 100%; background: #4FA187;"></div></div>
-          <div class="mono" style="font-size: 11.5px; color: #9CA5C9;">25%</div>
+          <div style="height: 8px; width: 100%; background: #E2E8F0; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 25%; height: 100%; background: #4FA187;"></div></div>
+          <div class="mono" style="font-size: 11.5px; color: #64748B;">25%</div>
         </div>
-        <div style="font-size: 12.5px; color: #9CA5C9;">The requester acknowledged receiving what they asked for</div>
-        <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #1E2A56; color: #9CA5C9;">Standard</span></div>
+        <div style="font-size: 12.5px; color: #64748B;">The requester acknowledged receiving what they asked for</div>
+        <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #E2E8F0; color: #64748B;">Standard</span></div>
       </div>
 
       <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center;">
-        <div style="font-size: 13.5px; font-weight: 600; color: #F4F6FF;">SLA Adherence</div>
+        <div style="font-size: 13.5px; font-weight: 600; color: #1E293B;">SLA Adherence</div>
         <div>
-          <div style="height: 8px; width: 100%; background: #1E2A56; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 15%; height: 100%; background: #4FA187;"></div></div>
-          <div class="mono" style="font-size: 11.5px; color: #9CA5C9;">15%</div>
+          <div style="height: 8px; width: 100%; background: #E2E8F0; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 15%; height: 100%; background: #4FA187;"></div></div>
+          <div class="mono" style="font-size: 11.5px; color: #64748B;">15%</div>
         </div>
-        <div style="font-size: 12.5px; color: #9CA5C9;">Request was fulfilled within the agreed turnaround time for its category</div>
-        <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #1E2A56; color: #9CA5C9;">Standard</span></div>
+        <div style="font-size: 12.5px; color: #64748B;">Request was fulfilled within the agreed turnaround time for its category</div>
+        <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #E2E8F0; color: #64748B;">Standard</span></div>
       </div>
     </div>
 
     <!-- CRITERIA TABLE: PRB -->
-    <div id="rubric-PRB" style="display: none; background: #0F1838; border: 1px solid #232D55; border-radius: 12px; overflow: hidden;">
-      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 14px 22px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: #7E88B0; font-weight: 600; border-bottom: 1px solid #1E2A56; background: #10193F;">
+    <div id="rubric-PRB" style="display: none; background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; overflow: hidden;">
+      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 14px 22px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: #64748B; font-weight: 600; border-bottom: 1px solid #E2E8F0; background: #F1F5F9;">
         <div>Criterion</div>
         <div>Weight</div>
         <div>What it checks</div>
         <div>Type</div>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center; border-bottom: 1px solid #1E2A56;">
-        <div style="font-size: 13.5px; font-weight: 600; color: #F4F6FF;">Linked Incident Count</div>
+      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center; border-bottom: 1px solid #E2E8F0;">
+        <div style="font-size: 13.5px; font-weight: 600; color: #1E293B;">Linked Incident Count</div>
         <div>
-          <div style="height: 8px; width: 100%; background: #1E2A56; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 20%; height: 100%; background: #C25A44;"></div></div>
-          <div class="mono" style="font-size: 11.5px; color: #9CA5C9;">20%</div>
+          <div style="height: 8px; width: 100%; background: #E2E8F0; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 20%; height: 100%; background: #C25A44;"></div></div>
+          <div class="mono" style="font-size: 11.5px; color: #64748B;">20%</div>
         </div>
-        <div style="font-size: 12.5px; color: #9CA5C9;">3+ linked incidents required to justify opening a Problem record</div>
+        <div style="font-size: 12.5px; color: #64748B;">3+ linked incidents required to justify opening a Problem record</div>
         <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #FBEAE6; color: #B4432F;">Critical</span></div>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center; border-bottom: 1px solid #1E2A56;">
-        <div style="font-size: 13.5px; font-weight: 600; color: #F4F6FF;">Root Cause Analysis Documented</div>
+      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center; border-bottom: 1px solid #E2E8F0;">
+        <div style="font-size: 13.5px; font-weight: 600; color: #1E293B;">Root Cause Analysis Documented</div>
         <div>
-          <div style="height: 8px; width: 100%; background: #1E2A56; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 30%; height: 100%; background: #C25A44;"></div></div>
-          <div class="mono" style="font-size: 11.5px; color: #9CA5C9;">30%</div>
+          <div style="height: 8px; width: 100%; background: #E2E8F0; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 30%; height: 100%; background: #C25A44;"></div></div>
+          <div class="mono" style="font-size: 11.5px; color: #64748B;">30%</div>
         </div>
-        <div style="font-size: 12.5px; color: #9CA5C9;">A specific root cause is recorded and traceable back to the linked incidents</div>
+        <div style="font-size: 12.5px; color: #64748B;">A specific root cause is recorded and traceable back to the linked incidents</div>
         <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #FBEAE6; color: #B4432F;">Critical</span></div>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center; border-bottom: 1px solid #1E2A56;">
-        <div style="font-size: 13.5px; font-weight: 600; color: #F4F6FF;">Permanent Fix vs. Workaround Distinguished</div>
+      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center; border-bottom: 1px solid #E2E8F0;">
+        <div style="font-size: 13.5px; font-weight: 600; color: #1E293B;">Permanent Fix vs. Workaround Distinguished</div>
         <div>
-          <div style="height: 8px; width: 100%; background: #1E2A56; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 20%; height: 100%; background: #4FA187;"></div></div>
-          <div class="mono" style="font-size: 11.5px; color: #9CA5C9;">20%</div>
+          <div style="height: 8px; width: 100%; background: #E2E8F0; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 20%; height: 100%; background: #4FA187;"></div></div>
+          <div class="mono" style="font-size: 11.5px; color: #64748B;">20%</div>
         </div>
-        <div style="font-size: 12.5px; color: #9CA5C9;">The record states plainly whether the fix applied is permanent or a temporary workaround</div>
-        <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #1E2A56; color: #9CA5C9;">Standard</span></div>
+        <div style="font-size: 12.5px; color: #64748B;">The record states plainly whether the fix applied is permanent or a temporary workaround</div>
+        <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #E2E8F0; color: #64748B;">Standard</span></div>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center; border-bottom: 1px solid #1E2A56;">
-        <div style="font-size: 13.5px; font-weight: 600; color: #F4F6FF;">Known Error Record Created</div>
+      <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center; border-bottom: 1px solid #E2E8F0;">
+        <div style="font-size: 13.5px; font-weight: 600; color: #1E293B;">Known Error Record Created</div>
         <div>
-          <div style="height: 8px; width: 100%; background: #1E2A56; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 15%; height: 100%; background: #4FA187;"></div></div>
-          <div class="mono" style="font-size: 11.5px; color: #9CA5C9;">15%</div>
+          <div style="height: 8px; width: 100%; background: #E2E8F0; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 15%; height: 100%; background: #4FA187;"></div></div>
+          <div class="mono" style="font-size: 11.5px; color: #64748B;">15%</div>
         </div>
-        <div style="font-size: 12.5px; color: #9CA5C9;">Required if root cause is known but a fix is still pending</div>
-        <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #1E2A56; color: #9CA5C9;">Standard</span></div>
+        <div style="font-size: 12.5px; color: #64748B;">Required if root cause is known but a fix is still pending</div>
+        <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #E2E8F0; color: #64748B;">Standard</span></div>
       </div>
 
       <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 16px 22px; align-items: center;">
-        <div style="font-size: 13.5px; font-weight: 600; color: #F4F6FF;">Preventive Action Owner &amp; Target Date</div>
+        <div style="font-size: 13.5px; font-weight: 600; color: #1E293B;">Preventive Action Owner &amp; Target Date</div>
         <div>
-          <div style="height: 8px; width: 100%; background: #1E2A56; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 15%; height: 100%; background: #4FA187;"></div></div>
-          <div class="mono" style="font-size: 11.5px; color: #9CA5C9;">15%</div>
+          <div style="height: 8px; width: 100%; background: #E2E8F0; border-radius: 999px; overflow: hidden; margin-bottom: 4px;"><div style="width: 15%; height: 100%; background: #4FA187;"></div></div>
+          <div class="mono" style="font-size: 11.5px; color: #64748B;">15%</div>
         </div>
-        <div style="font-size: 12.5px; color: #9CA5C9;">The preventive action has a named owner and a target date, not left open-ended</div>
-        <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #1E2A56; color: #9CA5C9;">Standard</span></div>
+        <div style="font-size: 12.5px; color: #64748B;">The preventive action has a named owner and a target date, not left open-ended</div>
+        <div><span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; background: #E2E8F0; color: #64748B;">Standard</span></div>
       </div>
     </div>
 
     <!-- THRESHOLD -->
     <div style="display: flex; gap: 16px;">
-      <div style="flex: 2; background: #0F1838; border: 1px solid #232D55; border-radius: 12px; padding: 20px 22px;">
-        <div style="font-size: 13px; font-weight: 600; color: #F4F6FF; margin-bottom: 10px;">Auto-flag threshold</div>
+      <div style="flex: 2; background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 20px 22px;">
+        <div style="font-size: 13px; font-weight: 600; color: #1E293B; margin-bottom: 10px;">Auto-flag threshold</div>
         <div style="display: flex; align-items: center; gap: 14px;">
           <div style="flex-grow: 1; height: 10px; background: linear-gradient(to right, #FBEAE6 0%, #FBEAE6 80%, #E8F5EE 80%, #E8F5EE 100%); border-radius: 999px; position: relative;">
-            <div style="position: absolute; left: 80%; top: -4px; width: 18px; height: 18px; border-radius: 999px; background: #FFC303; transform: translateX(-50%);"></div>
+            <div style="position: absolute; left: 80%; top: -4px; width: 18px; height: 18px; border-radius: 999px; background: #2563EB; transform: translateX(-50%);"></div>
           </div>
-          <div class="mono" style="font-size: 15px; font-weight: 700; color: #F4F6FF;">80</div>
+          <div class="mono" style="font-size: 15px; font-weight: 700; color: #1E293B;">80</div>
         </div>
-        <div style="font-size: 12px; color: #9CA5C9; margin-top: 10px;">Any ticket scoring below 80, or failing a critical criterion outright, routes to human review instead of auto-clearing.</div>
+        <div style="font-size: 12px; color: #64748B; margin-top: 10px;">Any ticket scoring below 80, or failing a critical criterion outright, routes to human review instead of auto-clearing.</div>
       </div>
       <div style="flex: 1; background: #FDF3E6; border-radius: 12px; padding: 20px 22px;">
         <div style="font-size: 11px; color: #8A6A3D; text-transform: uppercase; letter-spacing: 0.03em;">Critical override</div>
@@ -341,7 +341,7 @@
       </div>
     </div>
 
-    <div style="background: #0F1838; border: 1px solid #232D55; border-radius: 12px; padding: 16px 20px; font-size: 13px; color: #D3D8EF; line-height: 1.5;">
+    <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 16px 20px; font-size: 13px; color: #334155; line-height: 1.5;">
       This rubric is what makes scoring repeatable across auditors: the weights and threshold are versioned and applied identically to every ticket of that type, so a change here updates how <em>every future ticket of that type</em> is scored, not just how one auditor happens to judge one ticket.
     </div>
 
@@ -349,8 +349,8 @@
 </div>
 
 <script>
-  var activeStyle = 'padding: 9px 16px; border-radius: 8px; border: none; font-size: 13px; font-weight: 600; cursor: pointer; background: #FFC303; color: #0B1330;';
-  var inactiveStyle = 'padding: 9px 16px; border-radius: 8px; border: 1px solid #2B3768; font-size: 13px; font-weight: 500; cursor: pointer; background: #0F1838; color: #D3D8EF;';
+  var activeStyle = 'padding: 9px 16px; border-radius: 8px; border: none; font-size: 13px; font-weight: 600; cursor: pointer; background: #2563EB; color: #FFFFFF;';
+  var inactiveStyle = 'padding: 9px 16px; border-radius: 8px; border: 1px solid #CBD5E1; font-size: 13px; font-weight: 500; cursor: pointer; background: #FFFFFF; color: #334155;';
   var types = ['CR', 'INC', 'SR', 'PRB'];
 
   function showRubric(type) {
