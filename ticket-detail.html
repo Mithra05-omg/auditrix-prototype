@@ -34,6 +34,7 @@
       <div>
         <div style="font-family: 'Times New Roman', Times, serif; font-weight: 700; font-size: 15px; line-height: 1.2;">Audit Intelligence</div>
         <div style="font-size: 11px; color: #64748B;">Platform</div>
+        <div style="font-size: 10px; color: #94A3B8; margin-top: 2px;">Continuous Audit Intelligence</div>
       </div>
     </div>
 
@@ -138,6 +139,13 @@
             <div style="font-size: 13px; color: #334155; line-height: 1.6;"><strong style="color: #1E293B;">Combined AI Score of 61/100 is below the 80-point auto-flag threshold</strong> applied to every CR ticket, compounding the two critical failures above.</div>
           </div>
         </div>
+
+        <div style="display: flex; align-items: center; gap: 10px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #E2E8F0; flex-wrap: wrap;">
+          <div style="font-size: 12px; color: #64748B; margin-right: auto;">Auditor feedback on this flag, used to recalibrate the rubric during the pilot:</div>
+          <button id="agreeFlagBtn" onclick="agreeWithFlag()" style="padding: 9px 14px; border-radius: 8px; border: 1px solid #CBD5E1; background: #FFFFFF; font-size: 12.5px; font-weight: 500; color: #334155; cursor: pointer;">Agree with AI Flag</button>
+          <button id="overrideFlagBtn" onclick="overrideFlag()" style="padding: 9px 14px; border-radius: 8px; border: none; background: #2563EB; color: #FFFFFF; font-size: 12.5px; font-weight: 500; cursor: pointer;">Override: Mark as Compliant</button>
+        </div>
+        <div id="overrideFeedback" style="margin-top: 10px;"></div>
       </div>
     </div>
 
@@ -359,6 +367,37 @@
     var expanded = body.style.display === 'block';
     body.style.display = expanded ? 'none' : 'block';
     chevron.style.transform = expanded ? 'rotate(0deg)' : 'rotate(180deg)';
+  }
+
+  function disableFlagButtons() {
+    var agreeBtn = document.getElementById('agreeFlagBtn');
+    var overrideBtn = document.getElementById('overrideFlagBtn');
+    agreeBtn.disabled = true;
+    overrideBtn.disabled = true;
+    agreeBtn.style.opacity = '0.5';
+    overrideBtn.style.opacity = '0.5';
+    agreeBtn.style.cursor = 'not-allowed';
+    overrideBtn.style.cursor = 'not-allowed';
+  }
+
+  function agreeWithFlag() {
+    if (document.getElementById('agreeFlagBtn').disabled) return;
+    disableFlagButtons();
+    document.getElementById('overrideFeedback').innerHTML =
+      '<div style="display: flex; align-items: flex-start; gap: 10px; background: #E8F5EE; border: 1px solid #BEE3CE; border-radius: 8px; padding: 12px 14px;">' +
+      '<span style="font-size: 14px;">&#9989;</span>' +
+      '<div style="font-size: 13px; color: #1E7F4D; line-height: 1.5;"><strong>Confirmed.</strong> AI assessment upheld.</div>' +
+      '</div>';
+  }
+
+  function overrideFlag() {
+    if (document.getElementById('overrideFlagBtn').disabled) return;
+    disableFlagButtons();
+    document.getElementById('overrideFeedback').innerHTML =
+      '<div style="display: flex; align-items: flex-start; gap: 10px; background: #DBEAFE; border: 1px solid #93C5FD; border-radius: 8px; padding: 12px 14px;">' +
+      '<span style="font-size: 14px;">&#8635;</span>' +
+      '<div style="font-size: 13px; color: #1D4ED8; line-height: 1.5;"><strong>Override recorded.</strong> This ticket will be used to recalibrate the rubric during the pilot.</div>' +
+      '</div>';
   }
 
   function setDecision(decision) {
