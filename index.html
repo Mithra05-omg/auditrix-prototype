@@ -362,15 +362,15 @@
   var allTickets = [
     { id: 'INC-2049', type: 'INC', summary: 'Network outage RCA documentation', requested: '19 Sep', auditor: 'Ahmad Rahman bin Yusof', score: '94', status: 'Cleared', age: 0 },
     { id: 'SR-1187', type: 'SR', summary: 'Access request approval trail', requested: '17 Sep', auditor: 'Lim Wei Ling', score: '88', status: 'Cleared', age: 0 },
-    { id: 'CR-0345', type: 'CR', summary: 'Change window sign-off missing', requested: '21 Sep', auditor: 'Ahmad Rahman bin Yusof', score: '61', status: 'Flagged', age: 2 },
+    { id: 'CR-0345', type: 'CR', summary: 'Change window sign-off missing', requested: '21 Sep', auditor: 'Ahmad Rahman bin Yusof', score: '61', status: 'Flagged', age: 2, severity: 'critical' },
     { id: 'INC-2051', type: 'INC', summary: 'P1 escalation timestamp check', requested: '18 Sep', auditor: 'Ong Wei Jian', score: '90', status: 'Cleared', age: 0 },
-    { id: 'SR-1190', type: 'SR', summary: 'License request duplicate check', requested: '24 Sep', auditor: 'Lim Wei Ling', score: '77', status: 'In Review', age: 1 },
-    { id: 'CR-0348', type: 'CR', summary: 'Rollback plan not attached', requested: '24 Sep', auditor: 'Ong Wei Jian', score: '58', status: 'Flagged', age: 1 },
+    { id: 'SR-1190', type: 'SR', summary: 'License request duplicate check', requested: '24 Sep', auditor: 'Lim Wei Ling', score: '77', status: 'In Review', age: 1, severity: 'minor' },
+    { id: 'CR-0348', type: 'CR', summary: 'Rollback plan not attached', requested: '24 Sep', auditor: 'Ong Wei Jian', score: '58', status: 'Flagged', age: 1, severity: 'critical' },
     { id: 'INC-2053', type: 'INC', summary: 'Root cause field completeness', requested: '20 Sep', auditor: 'Ahmad Rahman bin Yusof', score: '92', status: 'Cleared', age: 0 },
     { id: 'SR-1193', type: 'SR', summary: 'Approver hierarchy validation', requested: '16 Sep', auditor: 'Lim Wei Ling', score: '85', status: 'Cleared', age: 0 },
     { id: 'CR-0351', type: 'CR', summary: 'Test evidence attachment check', requested: '15 Sep', auditor: 'Ong Wei Jian', score: '95', status: 'Cleared', age: 0 },
-    { id: 'INC-2056', type: 'INC', summary: 'Closure notes vs SLA match', requested: '21 Sep', auditor: 'Ahmad Rahman bin Yusof', score: '69', status: 'In Review', age: 4 },
-    { id: 'SR-1197', type: 'SR', summary: 'Segregation-of-duties flag', requested: '22 Sep', auditor: 'Lim Wei Ling', score: '54', status: 'Flagged', age: 3 },
+    { id: 'INC-2056', type: 'INC', summary: 'Closure notes vs SLA match', requested: '21 Sep', auditor: 'Ahmad Rahman bin Yusof', score: '69', status: 'In Review', age: 4, severity: 'minor' },
+    { id: 'SR-1197', type: 'SR', summary: 'Segregation-of-duties flag', requested: '22 Sep', auditor: 'Lim Wei Ling', score: '54', status: 'Flagged', age: 3, severity: 'critical' },
     { id: 'CR-0354', type: 'CR', summary: 'Post-implementation review logged', requested: '14 Sep', auditor: 'Ong Wei Jian', score: '91', status: 'Cleared', age: 0 }
   ];
 
@@ -407,6 +407,18 @@
     return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
 
+  function severityBorderColor(sev) {
+    if (sev === 'critical') return '#C25A44';
+    if (sev === 'minor') return '#E39A3F';
+    return 'transparent';
+  }
+
+  function severityBadge(sev) {
+    if (sev === 'critical') return '<span style="display: inline-block; margin-top: 4px; padding: 2px 7px; border-radius: 999px; font-size: 9.5px; font-weight: 700; letter-spacing: 0.03em; background: #FBEAE6; color: #B4432F;">CRITICAL</span>';
+    if (sev === 'minor') return '<span style="display: inline-block; margin-top: 4px; padding: 2px 7px; border-radius: 999px; font-size: 9.5px; font-weight: 700; letter-spacing: 0.03em; background: #FDF3E6; color: #B45309;">MINOR</span>';
+    return '';
+  }
+
   function render() {
     document.getElementById('tab-all').setAttribute('style', tabStyle(currentFilter === 'all'));
     document.getElementById('tab-flagged').setAttribute('style', tabStyle(currentFilter === 'flagged'));
@@ -429,14 +441,14 @@
       html = filtered.map(function (t) {
         var alert = alertFor(t.status, t.age);
         return '' +
-          '<div style="display: grid; grid-template-columns: 90px 60px 1fr 95px 130px 70px 100px 150px 80px; padding: 14px 22px; font-size: 13px; align-items: center; border-bottom: 1px solid #E2E8F0;">' +
+          '<div style="display: grid; grid-template-columns: 90px 60px 1fr 95px 130px 70px 100px 150px 80px; padding: 14px 22px; font-size: 13px; align-items: center; border-bottom: 1px solid #E2E8F0; border-left: 4px solid ' + severityBorderColor(t.severity) + '; box-sizing: border-box;">' +
           '<div class="mono" style="font-weight: 600; color: #1E293B;">' + escapeHtml(t.id) + '</div>' +
           '<div style="color: #64748B;">' + escapeHtml(t.type) + '</div>' +
           '<div style="color: #334155;">' + escapeHtml(t.summary) + '</div>' +
           '<div class="mono" style="color: #64748B; font-size: 11.5px;">' + escapeHtml(t.requested) + '</div>' +
           '<div style="color: #64748B; font-size: 12px;">' + escapeHtml(t.auditor) + '</div>' +
           '<div class="mono" style="font-weight: 600; color: #1E293B;">' + escapeHtml(t.score) + '</div>' +
-          '<div><span style="' + badgeStyle(t.status) + '">' + escapeHtml(t.status) + '</span></div>' +
+          '<div><span style="' + badgeStyle(t.status) + '">' + escapeHtml(t.status) + '</span>' + (t.severity ? '<div>' + severityBadge(t.severity) + '</div>' : '') + '</div>' +
           '<div style="font-size: 11.5px; ' + alert.style + '">' + alert.text + '</div>' +
           '<div><a href="ticket-detail.html" style="display: inline-flex; align-items: center; gap: 4px; padding: 7px 12px; border-radius: 7px; background: #2563EB; color: #FFFFFF; font-weight: 600; font-size: 12.5px; text-decoration: none; white-space: nowrap;">View &rarr;</a></div>' +
           '</div>';
