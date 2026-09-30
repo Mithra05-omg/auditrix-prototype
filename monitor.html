@@ -114,6 +114,19 @@
       <button id="chip-clear" onclick="setFilter('clear')">Cleared</button>
     </div>
 
+    <!-- ESCALATION SIMULATION -->
+    <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 16px 20px;">
+      <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+        <div style="flex-grow: 1;">
+          <div style="font-size: 13px; font-weight: 600; color: #1E293B;">Escalation Simulation</div>
+          <div style="font-size: 12px; color: #64748B; margin-top: 2px;">See what happens when a critical alert goes unacknowledged for 4 hours</div>
+        </div>
+        <div id="escalationCountdown" class="mono" style="font-size: 20px; font-weight: 700; color: #94A3B8; min-width: 100px; text-align: center;"></div>
+        <button id="escalationBtn" onclick="simulateEscalation()" style="padding: 10px 16px; border-radius: 8px; border: none; background: #2563EB; color: #FFFFFF; font-size: 13px; font-weight: 500; cursor: pointer;">Simulate Unacknowledged Alert</button>
+      </div>
+      <div id="escalationResult"></div>
+    </div>
+
     <!-- EVENT FEED -->
     <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 6px 0; flex-grow: 1; overflow-y: auto; max-height: 560px;">
       <div id="eventFeed"></div>
@@ -219,6 +232,47 @@
   }
 
   render();
+
+  function formatHM(totalMinutes) {
+    var h = Math.floor(totalMinutes / 60);
+    var m = totalMinutes % 60;
+    return h + 'h ' + (m < 10 ? '0' : '') + m + 'm';
+  }
+
+  function simulateEscalation() {
+    var btn = document.getElementById('escalationBtn');
+    if (btn.disabled) return;
+    btn.disabled = true;
+    btn.style.opacity = '0.6';
+    document.getElementById('escalationResult').innerHTML = '';
+
+    var countdownEl = document.getElementById('escalationCountdown');
+    var remaining = 239; // 3h 59m, in minutes
+    countdownEl.style.color = '#B45309';
+    countdownEl.textContent = formatHM(remaining);
+
+    var totalSteps = 20;
+    var decrementPer = Math.ceil(remaining / totalSteps);
+
+    var timer = setInterval(function () {
+      remaining -= decrementPer;
+      if (remaining <= 0) {
+        remaining = 0;
+        countdownEl.textContent = formatHM(0);
+        countdownEl.style.color = '#B4432F';
+        clearInterval(timer);
+        document.getElementById('escalationResult').innerHTML =
+          '<div style="margin-top: 12px; display: flex; align-items: flex-start; gap: 10px; background: #FBEAE6; border: 1px solid #F0C9BE; border-radius: 8px; padding: 12px 14px;">' +
+          '<span style="font-size: 14px;">&#128308;</span>' +
+          '<div style="font-size: 13px; color: #7A3226; line-height: 1.5;"><strong style="color: #B4432F;">Reassigned:</strong> no response from Ahmad Rahman bin Yusof after 4h. Routed to Ong Wei Jian (fewest open flags).</div>' +
+          '</div>';
+        btn.disabled = false;
+        btn.style.opacity = '1';
+        return;
+      }
+      countdownEl.textContent = formatHM(remaining);
+    }, 180);
+  }
 </script>
 </body>
 </html>

@@ -163,6 +163,56 @@
       </div>
     </div>
 
+    <!-- INTERACTIVE WHAT-IF SIMULATOR (CR only) -->
+    <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 22px 24px;">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 4px;">
+        <div>
+          <div style="font-size: 14px; font-weight: 600; color: #1E293B;">Interactive What-If: Sample CR Ticket</div>
+          <div style="font-size: 12px; color: #64748B; margin-top: 2px;">Toggle a criterion to Fail and watch the score and overall verdict update instantly</div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <div style="text-align: right;">
+            <div style="font-size: 11px; color: #64748B; text-transform: uppercase; letter-spacing: 0.03em;">Score</div>
+            <div id="whatIfScore" class="mono" style="font-size: 26px; font-weight: 700; color: #1E7F4D;">100</div>
+          </div>
+          <div id="whatIfBadge" style="display: inline-block; padding: 6px 14px; border-radius: 999px; font-size: 12.5px; font-weight: 700; background: #E8F5EE; color: #1E7F4D;">Overall: PASS</div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 16px;">
+
+        <div style="display: grid; grid-template-columns: 1.6fr 130px 1fr; padding: 14px 16px; align-items: center; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 13.5px; font-weight: 600; color: #1E293B;">Rollback Plan Present</span>
+            <span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 10.5px; font-weight: 600; background: #FBEAE6; color: #B4432F;">Critical</span>
+          </div>
+          <div><button id="wi-rollback-toggle" onclick="whatIfToggle('rollback')">Pass</button></div>
+          <div style="font-size: 12px; color: #64748B;">Toggling to Fail simulates a missing rollback procedure</div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1.6fr 130px 1fr; padding: 14px 16px; align-items: center; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 13.5px; font-weight: 600; color: #1E293B;">Approver &ne; Requester</span>
+            <span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 10.5px; font-weight: 600; background: #FBEAE6; color: #B4432F;">Critical</span>
+          </div>
+          <div><button id="wi-approver-toggle" onclick="whatIfToggle('approver')">Pass</button></div>
+          <div style="font-size: 12px; color: #64748B;">Toggling to Fail simulates a segregation-of-duties violation</div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1.6fr 130px 1fr; padding: 14px 16px; align-items: center; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 13.5px; font-weight: 600; color: #1E293B;">Post-Implementation Review</span>
+            <span style="display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 10.5px; font-weight: 600; background: #FBEAE6; color: #B4432F;">Critical</span>
+          </div>
+          <div><button id="wi-pir-toggle" onclick="whatIfToggle('pir')">Pass</button></div>
+          <div style="font-size: 12px; color: #64748B;">Toggling to Fail simulates no outcome logged after closure</div>
+        </div>
+
+      </div>
+
+      <div style="font-size: 11.5px; color: #94A3B8; margin-top: 14px;">Each critical criterion toggled to Fail subtracts 30 points from a 100-point baseline; any critical failure flips the overall verdict to FLAGGED regardless of the numeric score.</div>
+    </div>
+
     <!-- CRITERIA TABLE: INC -->
     <div id="rubric-INC" style="display: none; background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; overflow: hidden;">
       <div style="display: grid; grid-template-columns: 1.4fr 90px 2fr 110px; padding: 14px 22px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: #64748B; font-weight: 600; border-bottom: 1px solid #E2E8F0; background: #F1F5F9;">
@@ -361,6 +411,51 @@
   }
 
   showRubric('CR');
+
+  var whatIf = { rollback: true, approver: true, pir: true };
+
+  function whatIfToggleStyle(pass) {
+    if (pass) return 'padding: 7px 16px; border-radius: 999px; border: 1px solid #1E7F4D; background: #E8F5EE; color: #1E7F4D; font-size: 12.5px; font-weight: 700; cursor: pointer; min-width: 64px;';
+    return 'padding: 7px 16px; border-radius: 999px; border: 1px solid #B4432F; background: #FBEAE6; color: #B4432F; font-size: 12.5px; font-weight: 700; cursor: pointer; min-width: 64px;';
+  }
+
+  function renderWhatIf() {
+    ['rollback', 'approver', 'pir'].forEach(function (key) {
+      var btn = document.getElementById('wi-' + key + '-toggle');
+      btn.textContent = whatIf[key] ? 'Pass' : 'Fail';
+      btn.setAttribute('style', whatIfToggleStyle(whatIf[key]));
+    });
+
+    var score = 100;
+    var flagged = false;
+    ['rollback', 'approver', 'pir'].forEach(function (key) {
+      if (!whatIf[key]) {
+        score -= 30;
+        flagged = true;
+      }
+    });
+    if (score < 0) score = 0;
+
+    var scoreEl = document.getElementById('whatIfScore');
+    scoreEl.textContent = score;
+    scoreEl.style.color = flagged ? '#B45309' : '#1E7F4D';
+
+    var badge = document.getElementById('whatIfBadge');
+    if (flagged) {
+      badge.textContent = 'Overall: FLAGGED';
+      badge.setAttribute('style', 'display: inline-block; padding: 6px 14px; border-radius: 999px; font-size: 12.5px; font-weight: 700; background: #FDF3E6; color: #B45309;');
+    } else {
+      badge.textContent = 'Overall: PASS';
+      badge.setAttribute('style', 'display: inline-block; padding: 6px 14px; border-radius: 999px; font-size: 12.5px; font-weight: 700; background: #E8F5EE; color: #1E7F4D;');
+    }
+  }
+
+  function whatIfToggle(key) {
+    whatIf[key] = !whatIf[key];
+    renderWhatIf();
+  }
+
+  renderWhatIf();
 </script>
 </body>
 </html>

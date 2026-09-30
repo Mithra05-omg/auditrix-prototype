@@ -112,6 +112,35 @@
       </div>
     </div>
 
+    <!-- WHY WAS THIS FLAGGED -->
+    <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; overflow: hidden;">
+      <button onclick="toggleWhyFlagged()" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 22px; background: transparent; border: none; text-align: left; font-family: 'Times New Roman', Times, serif;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="width: 28px; height: 28px; border-radius: 7px; background: #FDF3E6; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2.5"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 1.5-2 1.7-2 3.5"/><path d="M12 17h.01"/></svg>
+          </div>
+          <div style="font-size: 14px; font-weight: 600; color: #1E293B;">Why was this flagged?</div>
+        </div>
+        <svg id="whyFlaggedChevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2" style="transition: transform .2s ease; flex-shrink: 0;"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div id="whyFlaggedBody" style="display: none; padding: 0 22px 20px;">
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="display: flex; gap: 10px; align-items: flex-start; background: #F8FAFC; border-radius: 8px; padding: 10px 14px;">
+            <span style="color: #B4432F; font-size: 13px; line-height: 1.6;">&#8226;</span>
+            <div style="font-size: 13px; color: #334155; line-height: 1.6;"><strong style="color: #1E293B;">Rollback Plan Attached is "Not found"</strong> &middot; Rollback Plan Present is a Critical criterion (scored 20%), and a missing rollback procedure fails the ticket outright, regardless of the combined score.</div>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: flex-start; background: #F8FAFC; border-radius: 8px; padding: 10px 14px;">
+            <span style="color: #B4432F; font-size: 13px; line-height: 1.6;">&#8226;</span>
+            <div style="font-size: 13px; color: #334155; line-height: 1.6;"><strong style="color: #1E293B;">Post-Implementation Review is "Not found" at closure</strong> &middot; also a Critical criterion (scored 0%); its absence alone routes the ticket to human review under the critical-override rule.</div>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: flex-start; background: #F8FAFC; border-radius: 8px; padding: 10px 14px;">
+            <span style="color: #B45309; font-size: 13px; line-height: 1.6;">&#8226;</span>
+            <div style="font-size: 13px; color: #334155; line-height: 1.6;"><strong style="color: #1E293B;">Combined AI Score of 61/100 is below the 80-point auto-flag threshold</strong> applied to every CR ticket, compounding the two critical failures above.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- PILLAR 1: AUTOMATED DATA EXTRACTION -->
     <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 22px 24px;">
       <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 14px;">
@@ -324,6 +353,14 @@
 </div>
 
 <script>
+  function toggleWhyFlagged() {
+    var body = document.getElementById('whyFlaggedBody');
+    var chevron = document.getElementById('whyFlaggedChevron');
+    var expanded = body.style.display === 'block';
+    body.style.display = expanded ? 'none' : 'block';
+    chevron.style.transform = expanded ? 'rotate(0deg)' : 'rotate(180deg)';
+  }
+
   function setDecision(decision) {
     var banner = document.getElementById('decisionBanner');
     var style = 'font-size: 12.5px; font-weight: 600; padding: 8px 12px; border-radius: 8px;';
